@@ -1,0 +1,86 @@
+{
+  "SchemaVersion": 2,
+  "CreatedAt": "2025-01-31T14:38:46.390663851-03:00",
+  "ArtifactName": "ubuntu",
+  "ArtifactType": "container_image",
+  "Metadata": {
+    "OS": {
+      "Family": "ubuntu",
+      "Name": "24.04"
+    },
+    "ImageID": "sha256:b1d9df8ab81559494794e522b380878cf9ba82d4c1fb67293bcf931c3aa69ae4",
+    "DiffIDs": [
+      "sha256:687d50f2f6a697da02e05f2b2b9cb05c1d551f37c404ebe55fdec44b0ae8aa5c"
+    ],
+    "RepoTags": [
+      "ubuntu:latest"
+    ],
+    "RepoDigests": [
+      "ubuntu@sha256:80dd3c3b9c6cecb9f1667e9290b3bc61b78c2678c02cbdae5f0fea92cc6734ab"
+    ],
+    "ImageConfig": {
+      "architecture": "amd64",
+      "container": "80830926962caf08bf24be856ac3c9ef2cc6d0522f549d559d1894a79f25d70f",
+      "created": "2024-11-19T17:29:25.973758549Z",
+      "docker_version": "24.0.7",
+      "history": [
+        {
+          "created": "2024-11-19T17:29:23Z",
+          "created_by": "/bin/sh -c #(nop)  ARG RELEASE",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-11-19T17:29:23Z",
+          "created_by": "/bin/sh -c #(nop)  ARG LAUNCHPAD_BUILD_ARCH",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-11-19T17:29:23Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.ref.name=ubuntu",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-11-19T17:29:23Z",
+          "created_by": "/bin/sh -c #(nop)  LABEL org.opencontainers.image.version=24.04",
+          "empty_layer": true
+        },
+        {
+          "created": "2024-11-19T17:29:25Z",
+          "created_by": "/bin/sh -c #(nop) ADD file:bcebbf0fddcba5b864d5d267b68dd23bcfb01275e6ec7bcab69bf8b56af14804 in / "
+        },
+        {
+          "created": "2024-11-19T17:29:25Z",
+          "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]",
+          "empty_layer": true
+        }
+      ],
+      "os": "linux",
+      "rootfs": {
+        "type": "layers",
+        "diff_ids": [
+          "sha256:687d50f2f6a697da02e05f2b2b9cb05c1d551f37c404ebe55fdec44b0ae8aa5c"
+        ]
+      },
+      "config": {
+        "Cmd": [
+          "/bin/bash"
+        ],
+        "Env": [
+          "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+        ],
+        "Image": "sha256:3ba7f9a61d88dd09bb6ac9166cec39891772edc997c4c1da55e50a27f2647e48",
+        "Labels": {
+          "org.opencontainers.image.ref.name": "ubuntu",
+          "org.opencontainers.image.version": "24.04"
+        }
+      }
+    }
+  },
+  "Results": [
+    {
+      "Target": "ubuntu (ubuntu 24.04)",
+      "Class": "os-pkgs",
+      "Type": "ubuntu"
+    }
+  ]
+}
