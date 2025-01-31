@@ -134,10 +134,43 @@ Se os logs ocuparem muito espaço no terminal:
     cat security/trivy_report.json | jq '.[] | select(.severity=="HIGH")' > security-reports/high_severity.json
     
     ```
+
+### Alternativa com Aqua Trivy
+
+Se desejar uma solução mais simples e integrada, você pode utilizar o **Aqua Trivy**, que combina várias verificações de segurança em um único scanner:
+
+-   **Verificação de vulnerabilidades** em código-fonte.
+    
+-   **Escaneamento de infraestrutura como código** (Docker, Terraform, Kubernetes).
+    
+-   **Detecção de segredos expostos**.
     
 
+#### Como rodar Trivy localmente:
 
+```
+sudo apt update
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh
+trivy fs --severity HIGH,CRITICAL --scanners vuln,secret .
+```
 
+#### Como integrar com GitHub Actions:
 
+```
+- name: Run Trivy Security Scan
+  uses: aquasecurity/trivy-action@master
+  with:
+    image-ref: 'meu-projeto'
+```
+#### Se a saída for muito longa e quiser ver apenas as **CRÍTICAS**, rode:
 
+```
+trivy fs --severity CRITICAL --scanners vuln,secret .
+```
 
+Para salvar o relatório em um arquivo JSON:
+```
+trivy fs --severity HIGH,CRITICAL --scanners vuln,secret . -f json -o trivy-report.json
+```
+
+Isso pode ser uma alternativa para quem busca uma configuração mais simples e rápida para automação de segurança.
